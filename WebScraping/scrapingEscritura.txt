@@ -1,0 +1,16 @@
+WebScraping.
+
+1- Node{
+
+npm install (api for request) request-promise (like a jquery for node) cheerio (headless browser) puppeteer
+
+before commiting node modules set, git config --global core.autocrlf true, this will allow git to automatically convert the end lines of modules from unix system LF to CRLF on windows;
+
+module.exports = nameOfMod; //for exporting your pure functions to the scraper core;
+}
+fetching data may occur of getting some errors, where the messages with statusCode starting by 1xx are just informative, by 2xx are success, 3xx redirecting, 4xx client-side error (you couldnt access), 5xx server-side error (some problem on the server communication);
+
+Problem: During fetch the commons modules doesn't render the response like browsers, just the first response, so cannot get the data from pages that generate dinamic content with javascript. Solution puppeteer.
+Puppeteer is like a entire browser api without UI that will render the content for us;
+
+Cherrio may be unused like jquery after querySelector, because the headless puppeteer has a equivalent method to querySelector and querySelectorAll -> page.$eval('selector', function) runs document.querySelector and passe the selected element for the func if no match throws an error, page.$$eval('selector', function) runs document.querySelectorAll if no matches any returns []. Or just page.$(selector) and page.$$(selector) handles the element;
