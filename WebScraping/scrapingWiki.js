@@ -11,7 +11,7 @@ rp.get(url).then(res => {
     const wikiUrls = [];
     for(let i = 0; i < length; i++)
         wikiUrls.push(anchors[i].attribs.href); // Salva cara link de pagina dos presidentes
-    return Promise.all( // Promete realizar todas chamadas de mapeamento assincronamente lul
+    return Promise.all( // Promete realizar todas chamadas do potusParse no mapeamento assincronamente lul
         wikiUrls.map(url => {
             return potusParse('https://en.wikipedia.org' + url); // Mapea o Nome e DataNascimento retornado pela promessa do módulo potusParse
         })
